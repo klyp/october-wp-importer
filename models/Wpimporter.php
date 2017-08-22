@@ -142,9 +142,7 @@ class Wpimporter extends Model
 
         if (! empty($this->import_xml_file)) {
             set_time_limit(360);
-            $importXmlFile = $this->import_xml_file;
-            $importXmlPath = $importXmlFile->getLocalPath();
-            $importFileContent = file_get_contents(public_path($importXmlPath));
+            $importFileContent = $this->import_xml_file->getContents();
 
             //Defaults
             $replaceArray = Wpimporter::get('replace_array');
