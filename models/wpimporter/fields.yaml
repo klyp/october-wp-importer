@@ -1,0 +1,72 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    blog_version:
+        label: Plugin version
+        disabled: true
+        required: true
+        span: auto
+
+    import_xml_file:
+        label: Import File (XML)
+        disabled: false
+        required: true
+        type: fileupload
+        mode: file
+        fileTypes: xml
+        mimeTpes: XML
+        span: auto
+
+    parent_page:
+        label: Parent Blog Page
+        disabled: false
+        required: true
+        type: dropdown
+        span: auto
+
+    default_admin:
+        label: Default author
+        disabled: false
+        required: true
+        type: dropdown
+        span: auto
+
+    post_status:
+        label: What to import
+        disabled: false
+        required: true
+        type: dropdown
+        options:
+            all: All
+            publish: Published
+        span: auto
+
+    import_xml_now:
+        label: Import XML after save
+        disabled: false
+        required: true
+        type: dropdown
+        options:
+            yes: Yes
+            no: No
+        span: auto
+
+    replace_array:
+        label: Search for
+        disabled: false
+        required: true
+        type: repeater
+        form:
+            fields:
+                replace_from:
+                    label: Replace
+                    disabled: false
+                    required: true
+                    span: auto
+                replace_with:
+                    label: With
+                    disabled: false
+                    required: true
+                    span: auto
