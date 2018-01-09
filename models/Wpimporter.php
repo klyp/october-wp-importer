@@ -142,7 +142,7 @@ class Wpimporter extends Model
 
         if (! empty($this->import_xml_file)) {
             set_time_limit(360);
-            $importFileContent = $this->import_xml_file->getContents();
+            $importFileContent = $this->import_xml_file()->withDeferred(input('_session_key'))->first()->getContents();
 
             //Defaults
             $replaceArray = Wpimporter::get('replace_array');
