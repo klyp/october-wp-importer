@@ -4,3 +4,4 @@
 1.1.2: Improved plugin detection
 1.1.3: Fixed localpath and slug format
 1.1.4: Fixed file_get_contents() error
+1.1.5: File attachement fix
