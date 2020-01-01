@@ -193,8 +193,10 @@ class Wpimporter extends Model
                                 foreach ($item->category[$i]->attributes() as $key => $value) {
                                     if ($value == 'category') {
                                         //Insert category
-                                        $postCategory = $blogCategory::firstOrCreate(['name' => $item->category[$i]]);
-                                        $postCategory->slug = Str::slug($item->category[$i]);
+                                        $postCategory = $blogCategory::firstOrCreate([
+                                            'name' => $item->category[$i],
+                                            'slug' => Str::slug($item->category[$i])
+                                        ]);
                                         $postCategory->save();
 
                                         // If Pro Blog
