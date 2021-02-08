@@ -194,7 +194,7 @@ class Wpimporter extends Model
                                     if ($value == 'category') {
                                         //Insert category
                                         $postCategory = $blogCategory::firstOrCreate([
-                                            'name' => $item->category[$i],
+                                            'name' => (string) $item->category[$i],
                                             'slug' => Str::slug($item->category[$i])
                                         ]);
                                         $postCategory->save();
@@ -224,7 +224,7 @@ class Wpimporter extends Model
 
                                     } elseif ($value == 'post_tag' && $blogVersion == 'Radiantweb.Problog') {
                                         //Insert tag
-                                        $postTag = $blogTag::firstOrCreate(['name' => $item->category[$i]]);
+                                        $postTag = $blogTag::firstOrCreate(['name' => (string) $item->category[$i]]);
                                         $postTag->slug = Str::slug($item->category[$i]);
                                         $postTag->save();
 
